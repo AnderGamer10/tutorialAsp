@@ -15,7 +15,7 @@ namespace tutorialAsp.Models
                     DbContextOptions<tutorialAspContext>>()))
             {
                 // Look for any movies.
-                if (context.Movie.Any())
+                if (context.Movie.Count() > 10)
                 {
                     return;   // DB has been seeded
                 }
@@ -52,7 +52,7 @@ namespace tutorialAsp.Models
                         Genre = "Western",
                         Price = 3.99M
                     }
-                );
+                );;
                 context.SaveChanges();
             }
         }
