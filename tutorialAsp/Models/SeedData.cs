@@ -15,7 +15,12 @@ namespace tutorialAsp.Models
                     DbContextOptions<tutorialAspContext>>()))
             {
                 // Look for any movies.
-                if (context.Movie.Count() > 10)
+                /*if (context.Movie.Count() > 10)
+                {
+                    return;   // DB has been seeded
+                }*/
+
+                if (context.Movie.Any())
                 {
                     return;   // DB has been seeded
                 }
